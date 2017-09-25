@@ -160,10 +160,10 @@ DropButton {
         ColumnLayout {
             spacing: ScreenTools.defaultFontPixelWidth * 0.5
 
-            QGCLabel { text: qsTr("Center map on:") }
+            QGCLabel { text: qsTr("地图中心:") }
 
             QGCButton {
-                text:               qsTr("Mission")
+                text:               qsTr("任务")
                 Layout.fillWidth:   true
                 visible:            showMission
                 enabled:            !followVehicleCheckBox.checked
@@ -175,7 +175,7 @@ DropButton {
             }
 
             QGCButton {
-                text:               qsTr("All items")
+                text:               qsTr("所有项目")
                 Layout.fillWidth:   true
                 visible:            showAllItems
                 enabled:            !followVehicleCheckBox.checked
@@ -187,7 +187,7 @@ DropButton {
             }
 
             QGCButton {
-                text:               qsTr("Home")
+                text:               qsTr("家")
                 Layout.fillWidth:   true
                 enabled:            !followVehicleCheckBox.checked
 
@@ -198,7 +198,7 @@ DropButton {
             }
 
             QGCButton {
-                text:               qsTr("Current Location")
+                text:               qsTr("当前位置")
                 Layout.fillWidth:   true
                 enabled:            map.gcsPosition ? map.gcsPosition.isValid && !followVehicleCheckBox.checked : false
 
@@ -209,7 +209,7 @@ DropButton {
             }
 
             QGCButton {
-                text:               qsTr("Vehicle")
+                text:               qsTr("飞行器")
                 Layout.fillWidth:   true
                 enabled:            _activeVehicle && _activeVehicle.latitude != 0 && _activeVehicle.longitude != 0 && !followVehicleCheckBox.checked
 
@@ -221,7 +221,7 @@ DropButton {
 
             QGCCheckBox {
                 id:         followVehicleCheckBox
-                text:       qsTr("Follow Vehicle")
+                text:       qsTr("跟随飞行器")
                 checked:    followVehicle
                 visible:    showFollowVehicle
 

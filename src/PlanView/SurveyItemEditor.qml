@@ -28,7 +28,7 @@ Rectangle {
     property real   _margin:            ScreenTools.defaultFontPixelWidth / 2
     property int    _cameraIndex:       1
     property real   _fieldWidth:        ScreenTools.defaultFontPixelWidth * 10.5
-    property var    _cameraList:        [ qsTr("Manual Grid (no camera specs)"), qsTr("Custom Camera Grid") ]
+    property var    _cameraList:        [ qsTr("网格指南 (没有相机说明)"), qsTr("传统相机网格") ]
     property var    _vehicle:           QGroundControl.multiVehicleManager.activeVehicle ? QGroundControl.multiVehicleManager.activeVehicle : QGroundControl.multiVehicleManager.offlineEditingVehicle
     property var    _vehicleCameraList: _vehicle.cameraList
 
@@ -186,7 +186,7 @@ Rectangle {
         QGCLabel {
             anchors.left:   parent.left
             anchors.right:  parent.right
-            text:           qsTr("WARNING: Photo interval is below minimum interval (%1 secs) supported by camera.").arg(missionItem.cameraMinTriggerInterval.toFixed(1))
+            text:           qsTr("警告：照片间隔低于相机支持的最小间隔（％1秒）。").arg(missionItem.cameraMinTriggerInterval.toFixed(1))
             wrapMode:       Text.WordWrap
             color:          qgcPal.warningText
             visible:        missionItem.manualGrid.value !== true && missionItem.cameraShots > 0 && missionItem.cameraMinTriggerInterval !== 0 && missionItem.cameraMinTriggerInterval > missionItem.timeBetweenShots
@@ -194,7 +194,7 @@ Rectangle {
 
         SectionHeader {
             id:         cameraHeader
-            text:       qsTr("Camera")
+            text:       qsTr("照相机")
             showSpacer: false
         }
 
@@ -282,7 +282,7 @@ Rectangle {
 
                 QGCRadioButton {
                     width:          _editFieldWidth
-                    text:           "Landscape"
+                    text:           "横屏"
                     checked:        !!missionItem.cameraOrientationLandscape.value
                     exclusiveGroup: cameraOrientationGroup
                     onClicked:      missionItem.cameraOrientationLandscape.value = 1
@@ -290,7 +290,7 @@ Rectangle {
 
                 QGCRadioButton {
                     id:             cameraOrientationPortrait
-                    text:           "Portrait"
+                    text:           "竖屏"
                     checked:        !missionItem.cameraOrientationLandscape.value
                     exclusiveGroup: cameraOrientationGroup
                     onClicked:      missionItem.cameraOrientationLandscape.value = 0
@@ -311,11 +311,11 @@ Rectangle {
                     Item { Layout.fillWidth: true }
                     QGCLabel {
                         Layout.preferredWidth:  _root._fieldWidth
-                        text:                   qsTr("Width")
+                        text:                   qsTr("宽度")
                     }
                     QGCLabel {
                         Layout.preferredWidth:  _root._fieldWidth
-                        text:                   qsTr("Height")
+                        text:                   qsTr("高度")
                     }
                 }
 
@@ -323,7 +323,7 @@ Rectangle {
                     anchors.left:   parent.left
                     anchors.right:  parent.right
                     spacing:        _margin
-                    QGCLabel { text: qsTr("Sensor"); Layout.fillWidth: true }
+                    QGCLabel { text: qsTr("传感器"); Layout.fillWidth: true }
                     FactTextField {
                         Layout.preferredWidth:  _root._fieldWidth
                         fact:                   missionItem.cameraSensorWidth
@@ -338,7 +338,7 @@ Rectangle {
                     anchors.left:   parent.left
                     anchors.right:  parent.right
                     spacing:        _margin
-                    QGCLabel { text: qsTr("Image"); Layout.fillWidth: true }
+                    QGCLabel { text: qsTr("图片"); Layout.fillWidth: true }
                     FactTextField {
                         Layout.preferredWidth:  _root._fieldWidth
                         fact:                   missionItem.cameraResolutionWidth
@@ -354,7 +354,7 @@ Rectangle {
                     anchors.right:  parent.right
                     spacing:        _margin
                     QGCLabel {
-                        text:                   qsTr("Focal length")
+                        text:                   qsTr("焦点长度")
                         Layout.fillWidth:       true
                     }
                     FactTextField {
@@ -372,11 +372,11 @@ Rectangle {
                 Item { Layout.fillWidth: true }
                 QGCLabel {
                     Layout.preferredWidth:  _root._fieldWidth
-                    text:                   qsTr("Front Lap")
+                    text:                   qsTr("前边")
                 }
                 QGCLabel {
                     Layout.preferredWidth:  _root._fieldWidth
-                    text:                   qsTr("Side Lap")
+                    text:                   qsTr("侧边")
                 }
             }
 
@@ -384,7 +384,7 @@ Rectangle {
                 anchors.left:   parent.left
                 anchors.right:  parent.right
                 spacing:        _margin
-                QGCLabel { text: qsTr("Overlap"); Layout.fillWidth: true }
+                QGCLabel { text: qsTr("重叠"); Layout.fillWidth: true }
                 FactTextField {
                     Layout.preferredWidth:  _root._fieldWidth
                     fact:                   missionItem.frontalOverlap
@@ -396,7 +396,7 @@ Rectangle {
             }
 
             FactCheckBox {
-                text:       qsTr("Hover and capture image")
+                text:       qsTr("盘旋获取图片")
                 fact:       missionItem.hoverAndCapture
                 visible:    missionItem.hoverAndCaptureAllowed
                 onClicked: {
@@ -407,14 +407,14 @@ Rectangle {
             }
 
             FactCheckBox {
-                text:       qsTr("Take images in turnarounds")
+                text:       qsTr("拍照转换")
                 fact:       missionItem.cameraTriggerInTurnaround
                 enabled:    !missionItem.hoverAndCapture.rawValue
             }
 
             SectionHeader {
                 id:     gridHeader
-                text:   qsTr("Grid")
+                text:   qsTr("网格")
             }
 
             GridLayout {
@@ -435,7 +435,7 @@ Rectangle {
 
                     QGCLabel {
                         id:                 angleText
-                        text:               qsTr("Angle")
+                        text:               qsTr("角度")
                         Layout.fillWidth:   true
                     }
 
@@ -459,14 +459,14 @@ Rectangle {
                     Layout.fillWidth:   true
                 }
 
-                QGCLabel { text: qsTr("Turnaround dist") }
+                QGCLabel { text: qsTr("转换距离") }
                 FactTextField {
                     fact:                   missionItem.turnaroundDist
                     Layout.fillWidth:       true
                 }
 
                 QGCLabel {
-                    text: qsTr("Entry")
+                    text: qsTr("入口")
                 }
                 FactComboBox {
                     fact:                   missionItem.gridEntryLocation
@@ -475,7 +475,7 @@ Rectangle {
                 }
 
                 QGCCheckBox {
-                    text:               qsTr("Refly at 90 degree offset")
+                    text:               qsTr("拒绝90度偏移")
                     checked:            missionItem.refly90Degrees
                     onClicked:          missionItem.refly90Degrees = checked
                     Layout.columnSpan:  2
@@ -483,7 +483,7 @@ Rectangle {
 
                 QGCLabel {
                     wrapMode:               Text.WordWrap
-                    text:                   qsTr("Select one:")
+                    text:                   qsTr("选择一个:")
                     Layout.preferredWidth:  parent.width
                     Layout.columnSpan:      2
                 }
@@ -626,27 +626,27 @@ Rectangle {
 
         SectionHeader {
             id:     statsHeader
-            text:   qsTr("Statistics") }
+            text:   qsTr("统计") }
 
         Grid {
             columns:        2
             columnSpacing:  ScreenTools.defaultFontPixelWidth
             visible:        statsHeader.checked
 
-            QGCLabel { text: qsTr("Survey area") }
+            QGCLabel { text: qsTr("区域") }
             QGCLabel { text: QGroundControl.squareMetersToAppSettingsAreaUnits(missionItem.coveredArea).toFixed(2) + " " + QGroundControl.appSettingsAreaUnitsString }
 
-            QGCLabel { text: qsTr("Photo count") }
+            QGCLabel { text: qsTr("拍照数量") }
             QGCLabel { text: missionItem.cameraShots }
 
-            QGCLabel { text: qsTr("Photo interval") }
+            QGCLabel { text: qsTr("拍照间隔") }
             QGCLabel {
                 text: {
                     var timeVal = missionItem.timeBetweenShots
                     if(!isFinite(timeVal) || missionItem.cameraShots === 0) {
                         return qsTr("N/A")
                     }
-                    return timeVal.toFixed(1) + " " + qsTr("secs")
+                    return timeVal.toFixed(1) + " " + qsTr("秒")
                 }
             }
         }

@@ -67,7 +67,7 @@ Rectangle {
         anchors.verticalCenter: commandPicker.verticalCenter
         anchors.leftMargin:     _margin
         anchors.left:           parent.left
-        text:                   missionItem.homePosition ? "H" : missionItem.sequenceNumber
+        text:                   missionItem.homePosition ? "家" : missionItem.sequenceNumber
         color:                  _outerTextColor
     }
 
@@ -120,7 +120,7 @@ Rectangle {
             }
 
             MenuItem {
-                text:           qsTr("Insert ") + _missionController.complexMissionItemNames[0]
+                text:           qsTr("插入") + _missionController.complexMissionItemNames[0]
                 visible:        _singleComplexItem
                 onTriggered:    insertComplexItem(_missionController.complexMissionItemNames[0])
             }

@@ -337,7 +337,7 @@ QGCView {
                     coordinate.latitude = coordinate.latitude.toFixed(_decimalPlaces)
                     coordinate.longitude = coordinate.longitude.toFixed(_decimalPlaces)
                     coordinate.altitude = coordinate.altitude.toFixed(_decimalPlaces)
-
+                    //添加航点的时候走这里
                     switch (_editingLayer) {
                     case _layerMission:
                         if (_addWaypointOnClick) {
@@ -494,6 +494,7 @@ QGCView {
 
                 readonly property real _buttonRadius: ScreenTools.defaultFontPixelHeight * 0.75
 
+                //点击对应的最上面COMBOBOX的响应
                 ExclusiveGroup {
                     id: planElementSelectorGroup
                     onCurrentChanged: {
