@@ -47,7 +47,7 @@ Item {
 
         MessageDialog {
             id:                 advancedModeConfirmation
-            title:              qsTr("Advanced Mode")
+            title:              qsTr("高级模式")
             text:               QGroundControl.corePlugin.showAdvancedUIMessage
             standardButtons:    StandardButton.Yes | StandardButton.No
 
@@ -61,7 +61,7 @@ Item {
     QGCLabel {
         id:                     waitForVehicle
         anchors.verticalCenter: parent.verticalCenter
-        text:                   qsTr("Waiting For Vehicle Connection")
+        text:                   qsTr("等待设备连接")
         font.pointSize:         ScreenTools.mediumFontPointSize
         font.family:            ScreenTools.demiboldFontFamily
         color:                  qgcPal.colorRed
@@ -127,7 +127,7 @@ Item {
         QGCButton {
             id:                     disconnectButton
             anchors.verticalCenter: parent.verticalCenter
-            text:                   qsTr("Disconnect")
+            text:                   qsTr("未链接")
             primary:                true
             onClicked:              _activeVehicle.disconnectInactiveVehicle()
         }
@@ -135,7 +135,7 @@ Item {
         QGCLabel {
             id:                     connectionLost
             anchors.verticalCenter: parent.verticalCenter
-            text:                   qsTr("COMMUNICATION LOST")
+            text:                   qsTr("通讯丢失")
             font.pointSize:         ScreenTools.largeFontPointSize
             font.family:            ScreenTools.demiboldFontFamily
             color:                  qgcPal.colorRed

@@ -58,8 +58,8 @@ MissionController::MissionController(PlanMasterController* masterController, QOb
     , _settingsItem(NULL)
     , _firstItemsFromVehicle(false)
     , _itemsRequested(false)
-    , _surveyMissionItemName(tr("Survey"))
-    , _fwLandingMissionItemName(tr("Fixed Wing Landing"))
+    , _surveyMissionItemName(tr("调查"))
+    , _fwLandingMissionItemName(tr("降落"))
     , _appSettings(qgcApp()->toolbox()->settingsManager()->appSettings())
     , _progressPct(0)
 {

@@ -97,13 +97,13 @@ Rectangle {
             id: hamburgerMenu
 
             MenuItem {
-                text:           qsTr("Insert waypoint")
+                text:           qsTr("插入飞行点")
                 onTriggered:    insertWaypoint()
             }
 
             Menu {
                 id:         patternMenu
-                title:      qsTr("Insert pattern")
+                title:      qsTr("插入模板")
                 visible:    !_singleComplexItem
 
                 Instantiator {
@@ -126,12 +126,12 @@ Rectangle {
             }
 
             MenuItem {
-                text:           qsTr("Delete")
+                text:           qsTr("删除")
                 onTriggered:    remove()
             }
 
             MenuItem {
-                text:           qsTr("Change command...")
+                text:           qsTr("改变指令...")
                 onTriggered:    commandPicker.clicked()
                 visible:        !_waypointsOnlyMode
             }
@@ -141,7 +141,7 @@ Rectangle {
             }
 
             MenuItem {
-                text:       qsTr("Show all values")
+                text:       qsTr("显示所有的值")
                 checkable:  true
                 checked:    missionItem.isSimpleItem ? missionItem.rawEdit : false
                 visible:    missionItem.isSimpleItem && !_waypointsOnlyMode
@@ -151,7 +151,7 @@ Rectangle {
                         if (missionItem.friendlyEditAllowed) {
                             missionItem.rawEdit = false
                         } else {
-                            qgcView.showMessage(qsTr("Mission Edit"), qsTr("You have made changes to the mission item which cannot be shown in Simple Mode"), StandardButton.Ok)
+                            qgcView.showMessage(qsTr("任务编译"), qsTr("您更改了在简单模式下无法显示的任务项目"), StandardButton.Ok)
                         }
                     } else {
                         missionItem.rawEdit = true
@@ -180,7 +180,7 @@ Rectangle {
             }
         }
 
-        onClicked: qgcView.showDialog(commandDialog, qsTr("Select Mission Command"), qgcView.showDialogDefaultWidth, StandardButton.Cancel)
+        onClicked: qgcView.showDialog(commandDialog, qsTr("选择任务指令"), qgcView.showDialogDefaultWidth, StandardButton.Cancel)
     }
 
     QGCLabel {

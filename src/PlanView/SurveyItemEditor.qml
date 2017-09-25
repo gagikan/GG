@@ -490,7 +490,7 @@ Rectangle {
 
                 QGCRadioButton {
                     id:                     fixedAltitudeRadio
-                    text:                   qsTr("Altitude")
+                    text:                   qsTr("高度")
                     checked:                !!missionItem.fixedValueIsAltitude.value
                     exclusiveGroup:         fixedValueGroup
                     onClicked:              missionItem.fixedValueIsAltitude.value = 1
@@ -568,7 +568,7 @@ Rectangle {
                 Layout.fillWidth:       true
             }
 
-            QGCLabel { text: qsTr("Altitude") }
+            QGCLabel { text: qsTr("高度") }
             FactTextField {
                 fact:                   missionItem.gridAltitude
                 Layout.fillWidth:       true

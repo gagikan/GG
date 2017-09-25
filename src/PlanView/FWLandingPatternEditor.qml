@@ -59,7 +59,7 @@ Rectangle {
         QGCCheckBox {
             id:             loiterAltRelative
             anchors.right:  parent.right
-            text:           qsTr("Altitude relative to home")
+            text:           qsTr("相对于家位置的高度")
             checked:        missionItem.loiterAltitudeRelative
             onClicked:      missionItem.loiterAltitudeRelative = checked
         }
@@ -151,7 +151,7 @@ Rectangle {
 
         QGCCheckBox {
             anchors.right:  parent.right
-            text:           qsTr("Altitude relative to home")
+            text:           qsTr("相对于家位置的")
             checked:        missionItem.landingAltitudeRelative
             onClicked:      missionItem.landingAltitudeRelative = checked
         }

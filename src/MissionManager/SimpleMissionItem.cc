@@ -55,7 +55,7 @@ SimpleMissionItem::SimpleMissionItem(Vehicle* vehicle, QObject* parent)
     , _speedSection(NULL)
     , _cameraSection(NULL)
     , _commandTree(qgcApp()->toolbox()->missionCommandTree())
-    , _altitudeRelativeToHomeFact   (0, "Altitude is relative to home", FactMetaData::valueTypeUint32)
+    , _altitudeRelativeToHomeFact   (0, "相对家高", FactMetaData::valueTypeUint32)
     , _supportedCommandFact         (0, "Command:",                     FactMetaData::valueTypeUint32)
     , _param1MetaData(FactMetaData::valueTypeDouble)
     , _param2MetaData(FactMetaData::valueTypeDouble)
@@ -94,7 +94,7 @@ SimpleMissionItem::SimpleMissionItem(Vehicle* vehicle, const MissionItem& missio
     , _speedSection(NULL)
     , _cameraSection(NULL)
     , _commandTree(qgcApp()->toolbox()->missionCommandTree())
-    , _altitudeRelativeToHomeFact   (0, "Altitude is relative to home", FactMetaData::valueTypeUint32)
+    , _altitudeRelativeToHomeFact   (0, "相对家高", FactMetaData::valueTypeUint32)
     , _supportedCommandFact         (0, "Command:",                     FactMetaData::valueTypeUint32)
     , _param1MetaData(FactMetaData::valueTypeDouble)
     , _param2MetaData(FactMetaData::valueTypeDouble)
@@ -127,7 +127,7 @@ SimpleMissionItem::SimpleMissionItem(const SimpleMissionItem& other, QObject* pa
     , _speedSection(NULL)
     , _cameraSection(NULL)
     , _commandTree(qgcApp()->toolbox()->missionCommandTree())
-    , _altitudeRelativeToHomeFact   (0, "Altitude is relative to home", FactMetaData::valueTypeUint32)
+    , _altitudeRelativeToHomeFact   (0, "相对家高", FactMetaData::valueTypeUint32)
     , _supportedCommandFact         (0, "Command:",                     FactMetaData::valueTypeUint32)
     , _param1MetaData(FactMetaData::valueTypeDouble)
     , _param2MetaData(FactMetaData::valueTypeDouble)
@@ -422,7 +422,7 @@ void SimpleMissionItem::_rebuildTextFieldFacts(void)
         }
 
         if (uiInfo->specifiesCoordinate() || uiInfo->specifiesAltitudeOnly()) {
-            _missionItem._param7Fact._setName("Altitude");
+            _missionItem._param7Fact._setName("高度");
             _missionItem._param7Fact.setMetaData(_altitudeMetaData);
             _textFieldFacts.append(&_missionItem._param7Fact);
         }

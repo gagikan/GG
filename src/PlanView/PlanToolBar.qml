@@ -177,7 +177,7 @@ Rectangle {
             Layout.alignment:       Qt.AlignHCenter
 
             QGCLabel {
-                text:               qsTr("Selected Waypoint")
+                text:               qsTr("选择飞行点")
                 Layout.columnSpan:  8
                 font.pointSize:     ScreenTools.smallFontPointSize
             }
@@ -191,7 +191,7 @@ Rectangle {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Azimuth:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("方位角:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _azimuthText
                 font.pointSize:         _dataFontSize
@@ -200,14 +200,14 @@ Rectangle {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Distance:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("距离:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _distanceText
                 font.pointSize:         _dataFontSize
                 Layout.minimumWidth:    _largeValueWidth
             }
 
-            QGCLabel { text: qsTr("Gradient:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("坡度:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _gradientText
                 font.pointSize:         _dataFontSize
@@ -216,7 +216,7 @@ Rectangle {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Heading:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("朝向:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _headingText
                 font.pointSize:         _dataFontSize
@@ -232,12 +232,12 @@ Rectangle {
             Layout.alignment:       Qt.AlignHCenter
 
             QGCLabel {
-                text:               qsTr("Total Mission")
+                text:               qsTr("任务总数")
                 Layout.columnSpan:  5
                 font.pointSize:     ScreenTools.smallFontPointSize
             }
 
-            QGCLabel { text: qsTr("Distance:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("距离:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _missionDistanceText
                 font.pointSize:         _dataFontSize
@@ -246,14 +246,14 @@ Rectangle {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Max telem dist:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("最大遥控距离:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _missionMaxTelemetryText
                 font.pointSize:         _dataFontSize
                 Layout.minimumWidth:    _largeValueWidth
             }
 
-            QGCLabel { text: qsTr("Time:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("时间:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   getMissionTime()
                 font.pointSize:         _dataFontSize
@@ -270,12 +270,12 @@ Rectangle {
             visible:                _batteryInfoAvailable
 
             QGCLabel {
-                text:               qsTr("Battery")
+                text:               qsTr("电池")
                 Layout.columnSpan:  3
                 font.pointSize:     ScreenTools.smallFontPointSize
             }
 
-            QGCLabel { text: qsTr("Batteries required:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("电池需求:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _batteriesRequiredText
                 font.pointSize:         _dataFontSize
@@ -284,7 +284,7 @@ Rectangle {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Swap waypoint:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("航点交换:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _batteryChangePointText
                 font.pointSize:         _dataFontSize
@@ -298,7 +298,7 @@ Rectangle {
         anchors.rightMargin:    _margins
         anchors.right:          parent.right
         anchors.verticalCenter: parent.verticalCenter
-        text:                   _controllerDirty ? qsTr("Upload Required") : qsTr("Upload")
+        text:                   _controllerDirty ? qsTr("上传请求") : qsTr("上传")
         enabled:                !_controllerSyncInProgress
         visible:                !_controllerOffline && !_controllerSyncInProgress && !uploadCompleteText.visible
         primary:                _controllerDirty

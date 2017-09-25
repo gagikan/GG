@@ -41,7 +41,7 @@ QGCFlickable {
                 anchors.margins:    _margin
                 anchors.left:       parent.left
                 anchors.top:        parent.top
-                text:               qsTr("GeoFence")
+                text:               qsTr("围栏")
                 color:              "black"
             }
 
@@ -70,7 +70,7 @@ QGCFlickable {
                         font.pointSize:     myGeoFenceController.supported ? ScreenTools.smallFontPointSize : ScreenTools.defaultFontPointSize
                         text:               myGeoFenceController.supported ?
                                                 qsTr("GeoFencing allows you to set a virtual ‘fence’ around the area you want to fly in.") :
-                                                qsTr("This vehicle does not support GeoFence.")
+                                                qsTr("这个飞行器不支持围栏.")
                     }
 
                     Column {

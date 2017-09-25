@@ -27,7 +27,7 @@ QGCFlickable {
             anchors.margins:    _margin
             anchors.left:       parent.left
             anchors.top:        parent.top
-            text:               qsTr("Rally Points")
+            text:               qsTr("点集合")
             color:              "black"
         }
 
@@ -49,7 +49,7 @@ QGCFlickable {
                 anchors.right:      parent.right
                 wrapMode:           Text.WordWrap
                 font.pointSize:     ScreenTools.smallFontPointSize
-                text:               qsTr("Rally Points provide alternate landing points when performing a Return to Launch (RTL).")
+                text:               qsTr("执行返回启动（RTL）时，集会点提供备用着陆点.")
             }
 
             QGCLabel {
@@ -60,8 +60,8 @@ QGCFlickable {
                 anchors.top:        infoLabel.bottom
                 wrapMode:           Text.WordWrap
                 text:               controller.supported ?
-                                        qsTr("Click in the map to add new rally points.") :
-                                        qsTr("This vehicle does not support Rally Points.")
+                                        qsTr("点击地图添加新的结合点.") :
+                                        qsTr("这个飞行器不支持点集合.")
             }
         }
     }

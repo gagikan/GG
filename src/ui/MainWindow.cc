@@ -174,7 +174,7 @@ MainWindow::MainWindow()
     connect(qgcApp()->toolbox()->corePlugin(), &QGCCorePlugin::showAdvancedUIChanged, this, &MainWindow::_showAdvancedUIChanged);
     _showAdvancedUIChanged(qgcApp()->toolbox()->corePlugin()->showAdvancedUI());
 
-    // Status Bar
+    // Status Bar // Status Bar /是最下方的状态
     setStatusBar(new QStatusBar(this));
     statusBar()->setSizeGripEnabled(true);
 
@@ -303,7 +303,7 @@ MAVLinkDecoder* MainWindow::_mavLinkDecoderInstance(void)
 
     return _mavlinkDecoder;
 }
-
+//创建WIDGETS下的工具
 void MainWindow::_buildCommonWidgets(void)
 {
     // Log player
@@ -320,6 +320,9 @@ void MainWindow::_buildCommonWidgets(void)
         QAction* action = new QAction(pDockWidgetName, this);
         action->setCheckable(true);
         action->setData(i);
+        QString nima = "Ctrl+";
+        QString en = QString::number(i,10);
+        action->setShortcut(QKeySequence(QString(nima.append(en)))); //快捷键设置
         connect(action, &QAction::triggered, this, &MainWindow::_showDockWidgetAction);
         _ui.menuWidgets->addAction(action);
         _mapName2Action[pDockWidgetName] = action;
@@ -344,7 +347,7 @@ void MainWindow::_showDockWidget(const QString& name, bool show)
     _mapName2Action[name]->setChecked(show);
 }
 
-/// Creates the specified inner dock widget and adds to the QDockWidget
+/// Creates the specified inner dock widget and adds to the QDockWidget  还是WIDGETS 点击后弹出新的窗口
 bool MainWindow::_createInnerDockWidget(const QString& widgetName)
 {
     QGCDockWidget* widget = NULL;
@@ -380,7 +383,7 @@ void MainWindow::_hideAllDockWidgets(void)
         dockWidget->setVisible(false);
     }
 }
-
+//点击WIDGETS下的按钮触发事件
 void MainWindow::_showDockWidgetAction(bool show)
 {
     QAction* action = qobject_cast<QAction*>(QObject::sender());
@@ -551,7 +554,7 @@ QObject* MainWindow::rootQmlObject(void)
 {
     return _mainQmlWidgetHolder->getRootObject();
 }
-
+//应该是左上角的FILE AND WIDGETS  MENU
 void MainWindow::_showAdvancedUIChanged(bool advanced)
 {
     if (advanced) {
