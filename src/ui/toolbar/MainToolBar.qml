@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
  *
  *   (c) 2009-2016 QGROUNDCONTROL PROJECT <http://www.qgroundcontrol.org>
  *
@@ -123,15 +123,15 @@ Rectangle {
                 onClicked:          toolBar.showFlyView()
             }
 
-            QGCToolBarButton {
-                id:                 analyzeButton
-                anchors.top:        parent.top
-                anchors.bottom:     parent.bottom
-                exclusiveGroup:     mainActionGroup
-                source:             "/qmlimages/Analyze.svg"
-                visible:            !ScreenTools.isMobile && QGroundControl.corePlugin.showAdvancedUI
-                onClicked:          toolBar.showAnalyzeView()
-            }
+//            QGCToolBarButton {
+//                id:                 analyzeButton
+//                anchors.top:        parent.top
+//                anchors.bottom:     parent.bottom
+//                exclusiveGroup:     mainActionGroup
+//                source:             "/qmlimages/Analyze.svg"
+//                visible:            !ScreenTools.isMobile && QGroundControl.corePlugin.showAdvancedUI
+//                onClicked:          toolBar.showAnalyzeView()
+//            }
 
             Rectangle {
                 anchors.margins:    ScreenTools.defaultFontPixelHeight / 2
